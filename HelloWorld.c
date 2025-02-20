@@ -15,6 +15,36 @@ int findMax(int x, int y) {
 
 void hello(char[], int); //function prototype
 
+
+void sort(int array[], int size){
+    bool swapped;
+
+    for(int i = 0; i < size - 1; i++) {
+        swapped = false;
+        for(int j = 0; j < size - i - 1; j++){
+            if(array[j] > array[j + 1]) {
+                int temp = array[j];
+                array[j] = array[j + 1];
+                array[j + 1] = temp;
+                swapped = true;
+            }
+        }
+        
+        if (!swapped) {
+            break;
+        }
+        
+    }
+}
+
+
+void printArray(int array[], int size){
+    for( int i = 0; i < size; i++){
+        printf("%d ", array[i]);
+    }
+}
+
+
 int main() {
 
     // printf("Hello!\n");
@@ -224,6 +254,49 @@ int main() {
 
     // printf("%d", sum);
 
+
+
+
+    // double prices[] = {5.0, 10.0, 15.0};
+
+    // printf("%lf\n", prices[1]);
+    // printf("%d bytes\n", sizeof(prices));
+
+    // char name[] = "Radek";
+
+
+
+    // int numbers[2][3] = {{1, 2, 3},
+    //                      {4, 5, 6}};
+
+
+    // char cars[][10] = {"Mustang", "Corvette", "Camaro"};
+
+    // //cars[0] = "Tesla"; Error
+
+    // strcpy(cars[0], "Tesla");
+
+    // for(int i = 0; i < sizeof(cars)/sizeof(cars[0]); i++){
+    //     printf("%s\n", cars[i]);
+    // }
+
+
+    // char x[15] = "lemonade";
+    // char y[15] = "soda";
+    // char temp[15];
+
+    // strcpy(temp, x);
+    // strcpy(x, y);
+    // strcpy(y, temp);
+
+
+
+
+    int array[] = {9, 1, 3, 4, 5, 8, 2, 1, 9};
+    int size = sizeof(array)/sizeof(array[0]);
+
+    sort(array, size);
+    printArray(array, size);
 
     return 0;
 }
